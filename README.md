@@ -1,4 +1,4 @@
-[中文说明]()
+[中文说明](https://github.com/biomarble/splitLargeGenome/blob/main/README.CN.md)
 
 # split large genome fasta and gtf/gff into shorter scaffolds 
 
