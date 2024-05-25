@@ -41,7 +41,7 @@ perl splitLargeGenome-main/splitLargeGenome.pl
 Split a genome into smaller fragments of 300M~500M in length using at least 10 Ns as separators, and update the corresponding gene.gtf with the new coordinates
 
 ```sh
-perl  splitLargeGenome.pl  -fa genome.fa -minlen 300000000 -maxlen 500000000 -gxf gene.gtf -out genome.sep  -numN
+perl  splitLargeGenome.pl  -fa genome.fa -minlen 300000000 -maxlen 500000000 -gxf gene.gtf -out genome.sep  -numN 10
 ```
 ### Results
 
