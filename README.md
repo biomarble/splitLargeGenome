@@ -3,8 +3,8 @@
 # split large genome fasta and gtf/gff into shorter scaffolds 
 
 - Large genome (e.g. wheat) have long single chromosome, which some software or file format not support.
-- `.bai` (bam index file) only support chromosomes shorter than $2^{29}-1$ Mb. 
-- `.csi` extend the limit to $2^{44}-1$ Mb, but support for `.csi` is not widely applied in all softwares.
+- `.bai` (bam index file) only support chromosomes shorter than $2^{29}-1$ bp. 
+- `.csi` extend the limit to $2^{44}-1$ bp, but support for `.csi` is not widely applied in all softwares.
 - `.tbi` (variant index file) have the same limitation, but the extended `.csi` format is not supported by some software (like GATK).
 
 ## Summary
