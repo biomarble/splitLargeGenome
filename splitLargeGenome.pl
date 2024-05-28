@@ -10,6 +10,7 @@ GetOptions(
    "minlen:s"=>\$min_fragment_length,
    "maxlen:s"=>\$max_fragment_length,
    "out:s"=>\$outpref,
+   "numN:s"=>\$numN,
    "gxf:s"=>\$gxf,
 )  or &USAGE;
 &USAGE unless ($infa and $outpref);
@@ -83,7 +84,7 @@ while (<$in>) {
     my $realS = 0;
     my $realLen=length($genome_sequence);
 
-    while ($genome_sequence =~ /(N{$numN,})/g) {
+    while ($genome_sequence =~ /(N{$numN,})/ig) {
         my $match_length = length($1);
         my $match_start = $-[0];
 
