@@ -154,7 +154,7 @@ sub process_gxf{
     while(<IN>){
       chomp;
       next if($_=~/^\s*$/);
-      next if($_=~/#/);
+      if($_=~/^#/){print "$_\n";next;}
       my ($chr,$source,$type,$start,$end,$else)=split /\t/,$_,6;
       foreach my $s(sort keys %{$reg{$chr}}){
           foreach my $e(sort keys %{$reg{$chr}{$s}}){
@@ -162,7 +162,7 @@ sub process_gxf{
              my $newS=$start-$s+1;
              my $newE=$end-$s+1;
              die  "feature  splitted into diff region $chr:$s-$e:\n$_\n" if($end>$e);
-             if($newS==$start and $newE==$end){
+             if(scalar keys %{$reg{$chr}}==1){
                  print OUT "$chr\t$source\t$type\t$newS\t$newE\t$else\n";
              }else{
                  print OUT "$chr\_$s\_$e\t$source\t$type\t$newS\t$newE\t$else\n";
